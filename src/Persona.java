@@ -18,5 +18,35 @@ public class Persona {
         this.Nacionalidad = Nacionalidad;
     }
 
-    
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setApellido(String apellido){
+        this.Apellido = apellido;
+    }
+
+    public String getApellido() {
+        return Apellido;
+    }
+
+    public void setEdad(String Edad) {
+        this.Edad = Edad;
+    }
+
+    public String getEdad() {
+        return Edad;
+    }
+
+    public void setNacionalidad(String Nacionalidad) {
+        this.Nacionalidad = Nacionalidad;
+    }
+
+    public String getNacionalidad() {
+        return Nacionalidad;
+    }
 }
