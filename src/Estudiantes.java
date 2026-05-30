@@ -3,6 +3,7 @@ public class Estudiantes extends Persona {
     private String Carrera;
     private String Estado;
     private String FechaInscripcion;
+    Materia materia = new Materia();
 
     public Estudiantes() {
         super();
@@ -62,7 +63,7 @@ public class Estudiantes extends Persona {
         System.out.println("Carrera: " + getCarrera());
         System.out.println("Estado: " + getEstado());
         System.out.println("Fecha de Inscripcion: " + getFechaInscripcion());
-        System.out.println("Materias: " /*+ MostrarMaterias()*/);
+        materia.MostrarMateria();
         System.out.println("------------------------------------------");
     }
 
