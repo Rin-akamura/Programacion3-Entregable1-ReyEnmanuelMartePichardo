@@ -58,7 +58,27 @@ public class SistemaMateria {
         
     }
 
+    public Materia BuscarClave(String clave) {
+        if(clave != null){
+            for(int i = 0; i < TotalMaterias; i++){
+                if(materias[i].getClave().equals(clave)){
+                    return materias[i];
+                }
+
+            }
+        } else{
+            System.out.println("Materia no encontrada en el sistema");
+        }
+
+        return null;
+    }
+    
+
     public void MostrarMateria() {
+        if(TotalMaterias == 0) {
+            System.out.println("No hay materias registradas en el sistema");
+            return;
+        }
         for(int i = 0; i < TotalMaterias; i++){
             materias[i].MostrarMateria();
         }
