@@ -4,7 +4,7 @@ public class Materia {
     private String clave;
     private String modalidad;
     private String Maestro;
-    private int calificacion;
+    private double calificacion;
 
     public Materia() {
         nombre = "";
@@ -15,7 +15,7 @@ public class Materia {
         Maestro = "";
     }
 
-    public Materia (String nombre, String horario, String clave, String modalidad, int calificacion, String Maestro){
+    public Materia (String nombre, String horario, String clave, String modalidad, double calificacion, String Maestro){
         this.nombre = nombre;
         this.horario = horario;
         this.clave = clave;
@@ -56,11 +56,11 @@ public class Materia {
         return modalidad;
     }
 
-    public void setCalificacion(int Calificacion) {
+    public void setCalificacion(double Calificacion) {
         this.calificacion = Calificacion;
     }
 
-    public int getCalificacion () {
+    public double getCalificacion () {
         return calificacion;
     }
 
