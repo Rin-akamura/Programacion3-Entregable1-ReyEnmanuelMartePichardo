@@ -45,12 +45,18 @@ public class Main {
                     System.out.println("Ingrese la Matricula del estudiante: ");
                     String matricula = scanner.nextLine();
                     Estudiantes estudiante = sistemaEstudiante.BuscarMatricula(matricula);
-                    if(estudiante == null) break;
+                     if(estudiante == null){ 
+                        System.out.println("Estudiante no encontrado en el sistema");
+                        break;
+                     }
 
                     System.out.println("Ingrese la clave de la materia: ");
                     String clave = scanner.nextLine();
                     Materia materia = sistemaMateria.BuscarClave(clave);
-                    if(materia == null) break;
+                    if(materia == null) {
+                        System.out.println("Materia no encontrada en el sistema");
+                        break;
+                    }
 
                     estudiante.asignarMateria(materia);
 
@@ -63,11 +69,17 @@ public class Main {
                     System.out.println("Ingrese la Matricula del estudiante: ");
                     String Matricula = scanner.nextLine();
                     Estudiantes Est = sistemaEstudiante.BuscarMatricula(Matricula);
-                    if(Est == null) break;
+                    if(Est == null){ 
+                        System.out.println("Estudiante no encontrado en el sistema");
+                        break;
+                     }
 
                     System.out.println("Ingrese la clave de la materia: ");
                     String Clave = scanner.nextLine();
-                    if(Clave == null) break;
+                    if(Clave == null) {
+                        System.out.println("Materia no encontrada en el sistema");
+                        break;
+                    }
 
                     Est.asignarCalificacion(Clave);
                     break;
