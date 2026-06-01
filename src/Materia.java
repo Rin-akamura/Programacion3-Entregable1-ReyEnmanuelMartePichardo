@@ -3,6 +3,7 @@ public class Materia {
     private String horario;
     private String clave;
     private String modalidad;
+    private String Maestro;
     private int calificacion;
 
     public Materia() {
@@ -11,14 +12,16 @@ public class Materia {
         clave = "";
         modalidad = "";
         calificacion = 0;
+        Maestro = "";
     }
 
-    public Materia (String nombre, String horario, String clave, String modalidad, int calificacion){
+    public Materia (String nombre, String horario, String clave, String modalidad, int calificacion, String Maestro){
         this.nombre = nombre;
         this.horario = horario;
         this.clave = clave;
         this.modalidad = modalidad;
         this.calificacion = calificacion;
+        this.Maestro = Maestro;
     }
 
     public void setNombre(String Nombre) {
@@ -61,10 +64,19 @@ public class Materia {
         return calificacion;
     }
 
+    public void setMaestro(String maestro){
+        this.Maestro = maestro;
+    }
+
+    public String getMaestro() {
+        return Maestro;
+    }
+
     public void MostrarMateria() {
-        System.out.println("Materia: " + getClave() + " " + getNombre());
+        System.out.println("" + getClave() + " " + getNombre());
         System.out.println("Horario: " + getHorario());
         System.out.println("Modalidad: " + getModalidad());
+        System.out.println("Maestro: " + getMaestro());
         System.out.println("Calificacion: " + getCalificacion());
     }
 
