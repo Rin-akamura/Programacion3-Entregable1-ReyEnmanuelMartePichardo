@@ -3,7 +3,8 @@ public class Estudiantes extends Persona {
     private String Carrera;
     private String Estado;
     private String FechaInscripcion;
-    Materia materia = new Materia();
+    Materia[] materias = new Materia[20];
+    int totalMaterias = 0;
 
     public Estudiantes() {
         super();
@@ -63,8 +64,22 @@ public class Estudiantes extends Persona {
         System.out.println("Carrera: " + getCarrera());
         System.out.println("Estado: " + getEstado());
         System.out.println("Fecha de Inscripcion: " + getFechaInscripcion());
-        materia.MostrarMateria();
+        System.out.println("Materias inscritas");
+        for(int i = 0; i < totalMaterias; i++){
+            if(totalMaterias == 0){
+                System.out.println("El estudiante no tiene materias inscritas");
+                return;
+            }
+            System.out.println("" + materias[i].getClave() + " - " + materias[i].getNombre());
+        }
         System.out.println("------------------------------------------");
+    }
+
+    public void asignarMateria(Materia materia){
+        materias[totalMaterias] = materia;
+        totalMaterias++;
+        
+        System.out.println("Materia agregada correctamente");
     }
 
     
