@@ -1,9 +1,6 @@
 import java.util.Scanner;
 public class SistemaEstudiante {
     Scanner sc = new Scanner(System.in);
-    
-
-    Materia[] materias = new Materia[100];
     Estudiantes[] registroE = new Estudiantes[100];
     int totalEstudiante = 0;
 
@@ -68,28 +65,95 @@ public class SistemaEstudiante {
         System.out.println("     .::BASE DE DATOS ESTUDIANTIL::.    ");
         System.out.println("========================================");
 
-        System.out.print("Ingrese la matricula del estudiante: ");
+        System.out.print("Ingrese la matricula o nombre del estudiante: ");
 
-        String Matricula = sc.nextLine();
+        String dato = sc.nextLine();
 
-        if(Matricula != null){
+        if(dato != null){
             for(int i = 0; i < totalEstudiante; i++){
-                if(registroE[i].getMatricula().equals(Matricula)){
+                if(registroE[i].getMatricula().equals(dato)){
+                    registroE[i].MostrarEstudiante();
+                    return;
+                } 
+                else if(registroE[i].getNombre().equals(dato)){
                     registroE[i].MostrarEstudiante();
                     return;
                 }
+
             }
-        } else{
+        } 
+        if(totalEstudiante == 0){
             System.out.println("Estudiante no encontrado en el sistema");
-            return;
         }
     }
 
     public void MostrarEstudiantes() {
+        if(totalEstudiante == 0){
+            System.out.println("No hay estudiantes registrados en el sistema");
+            return;
+        }
         for(int i = 0; i < totalEstudiante; i++) {
             registroE[i].MostrarEstudiante();
         }
     }
+
+    public Estudiantes BuscarMatricula(String matricula){
+        if(matricula != null){
+            for(int i = 0; i < totalEstudiante; i++){
+                if(registroE[i].getMatricula().equals(matricula)){
+                    return registroE[i];
+                }
+
+            }
+        } else{
+            System.out.println("Estudiante no encontrado en el sistema");
+        }
+
+        return null;
+    }
     
-    
+    public void ReportePromedios(){
+        System.out.println("========================================");
+        System.out.println("      .::REPORTE DE PROMEDIOS::.      ");
+        System.out.println("========================================");
+
+        if(totalEstudiante == 0) {
+            System.out.println("No hay estudiantes registrados en el sistema");
+            return;
+        }
+
+        for(int i = 0; i < totalEstudiante; i++){
+            Estudiantes estudiante = registroE[i];
+            if(estudiante.totalMaterias == 0){
+                System.out.println(estudiante.getNombre() + " no tiene materias inscritas");
+                return;
+            }
+
+            double suma = 0;
+
+            for(int j = 0; j < estudiante.totalMaterias; j++){
+                suma += estudiante.materias[j].getCalificacion();
+            }
+
+            double promedio = suma / estudiante.totalMaterias;
+
+            System.out.println("----------------------------------------");
+            System.out.println("Estudiante: " + estudiante.getNombre() + " " + estudiante.getApellido());
+
+            System.out.println("Matricula: " + estudiante.getMatricula());
+
+            System.out.println("Promedio: " + promedio);
+
+            if(promedio >= 70){
+                System.out.println("Estado: APROBADO");
+            }else{
+                System.out.println("Estado: REPROBADO");
+            }
+
+            System.out.println("----------------------------------------");
+
+            
+        }
+
+    }
 }
