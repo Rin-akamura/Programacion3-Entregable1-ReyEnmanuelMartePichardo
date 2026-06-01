@@ -67,12 +67,13 @@ public class Estudiantes extends Persona {
         System.out.println("Estado: " + getEstado());
         System.out.println("Fecha de Inscripcion: " + getFechaInscripcion());
         System.out.println("Materias inscritas");
-        for(int i = 0; i < totalMaterias; i++){
-            if(totalMaterias == 0){
+        if(totalMaterias == 0){
                 System.out.println("El estudiante no tiene materias inscritas");
                 return;
+        }else {
+            for(int i = 0; i < totalMaterias; i++){
+                System.out.println("" + materias[i].getClave() + " - " + materias[i].getNombre() + "|  Calificacion: " + materias[i].getCalificacion());
             }
-            System.out.println("" + materias[i].getClave() + " - " + materias[i].getNombre() + "|  Calificacion: " + materias[i].getCalificacion());
         }
         System.out.println("------------------------------------------");
     }
