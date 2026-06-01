@@ -1,4 +1,6 @@
+import java.util.Scanner;
 public class Estudiantes extends Persona {
+    private Scanner sc = new Scanner(System.in);
     private String Matricula;
     private String Carrera;
     private String Estado;
@@ -70,7 +72,7 @@ public class Estudiantes extends Persona {
                 System.out.println("El estudiante no tiene materias inscritas");
                 return;
             }
-            System.out.println("" + materias[i].getClave() + " - " + materias[i].getNombre());
+            System.out.println("" + materias[i].getClave() + " - " + materias[i].getNombre() + "|  Calificacion: " + materias[i].getCalificacion());
         }
         System.out.println("------------------------------------------");
     }
@@ -80,6 +82,22 @@ public class Estudiantes extends Persona {
         totalMaterias++;
         
         System.out.println("Materia agregada correctamente");
+    }
+
+    public void asignarCalificacion(String clave){
+        if(clave != null) {
+            for(int i = 0; i < totalMaterias; i++){
+                if(materias[i].getClave().equals(clave)){
+                    System.out.println("Ingrese la calificacion: ");
+                    int calificacion = sc.nextInt();
+                    materias[i].setCalificacion(calificacion);
+                    return;
+
+                }
+            }
+        } else{
+            System.out.println("Materia no encontrada en el sistema");
+        }    
     }
 
     
