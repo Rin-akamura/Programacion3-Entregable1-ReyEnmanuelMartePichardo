@@ -84,6 +84,12 @@ public class SistemaEstudiante {
             return;
         }
     }
+
+    public void MostrarEstudiantes() {
+        for(int i = 0; i < totalEstudiante; i++) {
+            registroE[i].MostrarEstudiante();
+        }
+    }
     
     
 }
