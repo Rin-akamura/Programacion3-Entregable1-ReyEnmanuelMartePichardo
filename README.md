@@ -18,4 +18,17 @@ Aplicación desarrollada en Java basada en un menú interactivo que permite gest
     JDK 25.0.3
     Visual Studio Code
 
-
+## Arbol
+Programacion3-Entregable1-ReyEnmanuelMartePichardo
+├── src
+│   ├── Estudiantes.java
+│   ├── Maestros.java
+│   ├── Main.java
+│   ├── Materia.java
+│   ├── Persona.java
+│   ├── SistemaEstudiante.java
+│   ├── SistemaMaestros.java
+│   └── SistemaMateria.java
+├── .gitignore
+├── Manual de uso del sistema.md
+└── README.md
